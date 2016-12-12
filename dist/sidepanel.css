@@ -1,0 +1,117 @@
+/* Flexbox レイアウト用 */
+.flexColumn {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+.flexRow {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+}
+.flexColumn > *, .flexRow > * {
+  flex: auto;
+}
+
+.fillWithLastChild > :not(:last-child) {
+  flex: none;
+}
+.fillWithLastChild > :last-child {
+  flex: auto;
+}
+
+/* サイドバー用 */
+.flyoutWrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.flyoutWrap.hidden {
+  visibility: collapse;
+  transition: visibility 0s .5s;
+}
+.flyout {
+  width: 320px;
+  -webkit-backdrop-filter: blur(10px);
+  transition: margin-left .5s ease-out;
+}
+@supports not (-webkit-backdrop-filter: blur(10px)) {
+  /* backdrop-filter をサポートしていないブラウザでは背景色を指定 */
+  .flyout {
+    background-color: rgba(255, 255, 255, .9);
+  }
+}
+.flyoutWrap.hidden .flyout {
+  margin-left: -320px;
+}
+.flyoutBackground {
+  background-color: rgba(0, 0, 0, .5);
+  transition: background-color .5s ease-out;
+}
+.flyoutWrap.hidden .flyoutBackground {
+  background-color: transparent;
+}
+.flyoutToggle {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  left: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #FF5252;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  transform: rotate(405deg);
+  transition: transform .5s ease-out, background-color .5s ease-out;
+}
+.flyoutToggle.hidden {
+  transform: rotate(0deg);
+  background-color: #4CAF50;
+}
+.flyoutToggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color .3s ease-out;
+}
+.flyoutToggle:hover::before {
+  background-color: rgba(0, 0, 0, .1);
+}
+.flyoutToggle:active::before {
+  background-color: rgba(0, 0, 0, .5);
+}
+.flyoutToggle > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.flyoutToggle > span::before, .flyoutToggle > span::after {
+  display: block;
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.flyoutToggle > span::after {
+  transform: rotate(90deg);
+}
