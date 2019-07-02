@@ -1,0 +1,16 @@
+{
+  "name": "@kebo69/sidepanel",
+  "version": "0.1.0",
+  "description": "A CSS Library for the left-side overlay panel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkk669/sidepanel.git"
+  },
+  "author": "Kenta Kubo <kabuto669@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kkk669/sidepanel/issues"
+  },
+  "homepage": "https://github.com/kkk669/sidepanel#readme",
+  "files": ["dist/*"]
+}
