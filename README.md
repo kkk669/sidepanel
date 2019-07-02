@@ -1,6 +1,6 @@
 # sidepanel
 
-![npm (scoped)](https://img.shields.io/npm/v/@kebo69/sidepanel.svg)
+[![npm (scoped)](https://img.shields.io/npm/v/@kebo69/sidepanel.svg)](https://www.npmjs.com/package/@kebo69/sidepanel)
 
 A CSS Library for the left-side overlay panel.
 
